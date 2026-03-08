@@ -10,15 +10,11 @@
 :root{--bg:#080b10;--bg2:#0d1117;--surface:#111620;--border:#1e2530;--accent:#00e5ff;--accent2:#7b61ff;--text:#e8edf5;--muted:#5a6580}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;font-size:14px;line-height:1.7;overflow-x:hidden}
-
-/* NAV */
 nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(8,11,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--accent)}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s}
 .nav-links a:hover{color:var(--accent)}
-
-/* HERO */
 #hero{min-height:92vh;display:flex;align-items:center;padding:0 4rem;background:var(--bg);position:relative;overflow:hidden}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.03) 1px,transparent 1px);background-size:60px 60px}
 .hero-glow{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(0,229,255,0.05) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
@@ -33,13 +29,9 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,229,255,0.25)}
 .btn-ghost{display:inline-flex;align-items:center;border:1px solid var(--border);color:var(--muted);padding:0.75rem 1.8rem;font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.08em;text-decoration:none;text-transform:uppercase;transition:all 0.2s}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
-
-/* SECTIONS */
 section{padding:6rem 4rem}
 .sec-label{color:var(--accent);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.75rem}
 .sec-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.02em;margin-bottom:3rem}
-
-/* ABOUT */
 #about{background:var(--bg2);border-top:1px solid var(--border)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .about-text p{color:var(--muted);font-size:0.875rem;line-height:1.9;margin-bottom:1.1rem}
@@ -60,8 +52,6 @@ section{padding:6rem 4rem}
 .t-cmd{color:var(--text)}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 .cursor-blink{animation:blink 1s step-end infinite;color:var(--accent)}
-
-/* SKILLS */
 #skills{background:var(--bg)}
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .skill-card{background:var(--surface);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s,transform 0.2s}
@@ -72,9 +62,6 @@ section{padding:6rem 4rem}
 .skill-bar{flex:1;height:2px;background:var(--border);margin:0 0.75rem;position:relative;overflow:hidden}
 .skill-fill{position:absolute;top:0;left:0;height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent))}
 .skill-pct{color:var(--muted);font-size:0.68rem;width:30px;text-align:right}
-@keyframes grow{from{width:0}to{width:var(--w)}}
-
-/* PROJECTS */
 #projects{background:var(--bg2);border-top:1px solid var(--border)}
 .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .proj-card{background:var(--surface);border:1px solid var(--border);padding:2rem;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:border-color 0.25s,transform 0.25s}
@@ -88,8 +75,6 @@ section{padding:6rem 4rem}
 .tag{background:rgba(0,229,255,0.06);border:1px solid rgba(0,229,255,0.15);color:var(--accent);padding:0.18rem 0.55rem;font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase}
 .proj-link{color:var(--muted);font-size:0.7rem;text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;margin-top:1.2rem;display:inline-block;transition:color 0.2s}
 .proj-link:hover{color:var(--accent)}
-
-/* CONTACT */
 #contact{background:var(--bg)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
 .contact-desc{color:var(--muted);font-size:0.875rem;line-height:1.9;margin-bottom:2rem}
@@ -102,13 +87,9 @@ section{padding:6rem 4rem}
 .finput,.ftextarea{width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:0.8rem 1rem;font-family:'JetBrains Mono',monospace;font-size:0.8rem;outline:none;transition:border-color 0.2s}
 .finput:focus,.ftextarea:focus{border-color:var(--accent)}
 .ftextarea{min-height:120px;resize:none}
-
-/* FOOTER */
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center}
 footer span{color:var(--muted);font-size:0.72rem}
 footer .accent{color:var(--accent)}
-
-/* RESPONSIVE */
 @media(max-width:900px){
   nav,section,#hero,footer{padding-left:1.5rem;padding-right:1.5rem}
   .about-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}
@@ -129,7 +110,6 @@ footer .accent{color:var(--accent)}
   </ul>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
@@ -145,15 +125,14 @@ footer .accent{color:var(--accent)}
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="sec-label">// 01 &mdash; About</div>
   <h2 class="sec-title">Who I Am</h2>
   <div class="about-grid">
     <div class="about-text">
-      <p>Hey &mdash; I&apos;m <strong>Varsha Rani R</strong>, a software developer and active learner from Chennai, Tamil Nadu. I&apos;m passionate about building with technology and thrive in competitive environments like hackathons and ideathons.</p>
-      <p>I participated in <strong>AMD Slingshot</strong> (Human Imagination Built with AI) and regularly take part in hackathons across colleges &mdash; including one at <strong>Rajalakshmi Engineering College</strong>. Currently levelling up in Java &amp; C++.</p>
-      <p>Beyond code, I&apos;m a <strong>state-level elocution prize winner</strong>, former school House Captain, and a sports enthusiast &mdash; Badminton, Kho-Kho, and Throwball. I believe great software is built by people who never stop learning.</p>
+      <p>Hey &mdash; I'm <strong>Varsha Rani R</strong>, a software developer and active learner from Chennai, Tamil Nadu. Passionate about building with technology and thriving in competitive environments like hackathons and ideathons.</p>
+      <p>I participated in <strong>AMD Slingshot</strong> (Human Imagination Built with AI) and regularly take part in hackathons &mdash; including <strong>REC Hackathon</strong>, <strong>Capture The Flag</strong>, and <strong>Geo Hack 1.0</strong>. Currently levelling up in Java &amp; C++.</p>
+      <p>Beyond code, I'm a <strong>state-level elocution prize winner</strong>, former school House Captain, and a sports enthusiast &mdash; Badminton, Kho-Kho, and Throwball. I believe great software is built by people who never stop learning.</p>
       <div class="stats">
         <div class="stat"><div class="stat-num">9.5</div><div class="stat-lbl">College CGPA (Sem 1)</div></div>
         <div class="stat"><div class="stat-num">95%</div><div class="stat-lbl">Class 10 Boards</div></div>
@@ -188,53 +167,45 @@ footer .accent{color:var(--accent)}
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="sec-label">// 02 &mdash; Skills</div>
   <h2 class="sec-title">Technical Stack</h2>
   <div class="skills-grid">
-
     <div class="skill-card">
       <div class="skill-card-title">Languages</div>
-      <div class="skill-row"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" style="width:85%;--w:85%"></div></div><span class="skill-pct">85%</span></div>
-      <div class="skill-row"><span class="skill-name">C Language</span><div class="skill-bar"><div class="skill-fill" style="width:80%;--w:80%"></div></div><span class="skill-pct">80%</span></div>
-      <div class="skill-row"><span class="skill-name">Java (Learning)</span><div class="skill-bar"><div class="skill-fill" style="width:40%;--w:40%"></div></div><span class="skill-pct">40%</span></div>
-      <div class="skill-row"><span class="skill-name">C++ (Learning)</span><div class="skill-bar"><div class="skill-fill" style="width:35%;--w:35%"></div></div><span class="skill-pct">35%</span></div>
+      <div class="skill-row"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div><span class="skill-pct">85%</span></div>
+      <div class="skill-row"><span class="skill-name">C Language</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div><span class="skill-pct">80%</span></div>
+      <div class="skill-row"><span class="skill-name">Java (Learning)</span><div class="skill-bar"><div class="skill-fill" style="width:40%"></div></div><span class="skill-pct">40%</span></div>
+      <div class="skill-row"><span class="skill-name">C++ (Learning)</span><div class="skill-bar"><div class="skill-fill" style="width:35%"></div></div><span class="skill-pct">35%</span></div>
     </div>
-
     <div class="skill-card">
       <div class="skill-card-title">Soft Skills</div>
-      <div class="skill-row"><span class="skill-name">Public Speaking</span><div class="skill-bar"><div class="skill-fill" style="width:95%;--w:95%"></div></div><span class="skill-pct">95%</span></div>
-      <div class="skill-row"><span class="skill-name">Active Listening</span><div class="skill-bar"><div class="skill-fill" style="width:92%;--w:92%"></div></div><span class="skill-pct">92%</span></div>
-      <div class="skill-row"><span class="skill-name">Leadership</span><div class="skill-bar"><div class="skill-fill" style="width:88%;--w:88%"></div></div><span class="skill-pct">88%</span></div>
-      <div class="skill-row"><span class="skill-name">Team Work</span><div class="skill-bar"><div class="skill-fill" style="width:90%;--w:90%"></div></div><span class="skill-pct">90%</span></div>
+      <div class="skill-row"><span class="skill-name">Public Speaking</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div><span class="skill-pct">95%</span></div>
+      <div class="skill-row"><span class="skill-name">Active Listening</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div><span class="skill-pct">92%</span></div>
+      <div class="skill-row"><span class="skill-name">Leadership</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div><span class="skill-pct">88%</span></div>
+      <div class="skill-row"><span class="skill-name">Team Work</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div><span class="skill-pct">90%</span></div>
     </div>
-
     <div class="skill-card">
       <div class="skill-card-title">Interests</div>
-      <div class="skill-row"><span class="skill-name">Hackathons &#128293;</span><div class="skill-bar"><div class="skill-fill" style="width:90%;--w:90%"></div></div><span class="skill-pct">90%</span></div>
-      <div class="skill-row"><span class="skill-name">AI &amp; Ideathons &#129302;</span><div class="skill-bar"><div class="skill-fill" style="width:85%;--w:85%"></div></div><span class="skill-pct">85%</span></div>
-      <div class="skill-row"><span class="skill-name">Badminton &#127992;</span><div class="skill-bar"><div class="skill-fill" style="width:88%;--w:88%"></div></div><span class="skill-pct">88%</span></div>
-      <div class="skill-row"><span class="skill-name">Elocution &#127942;</span><div class="skill-bar"><div class="skill-fill" style="width:95%;--w:95%"></div></div><span class="skill-pct">95%</span></div>
+      <div class="skill-row"><span class="skill-name">Hackathons &#128293;</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div><span class="skill-pct">90%</span></div>
+      <div class="skill-row"><span class="skill-name">AI &amp; Ideathons &#129302;</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div><span class="skill-pct">85%</span></div>
+      <div class="skill-row"><span class="skill-name">Badminton &#127992;</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div><span class="skill-pct">88%</span></div>
+      <div class="skill-row"><span class="skill-name">Elocution &#127942;</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div><span class="skill-pct">95%</span></div>
     </div>
-
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="sec-label">// 03 &mdash; Projects</div>
   <h2 class="sec-title">Selected Work</h2>
   <div class="projects-grid">
-
     <div class="proj-card">
       <div class="proj-num">01</div>
       <div class="proj-title">AMD Slingshot Ideathon</div>
-      <p class="proj-desc">Participated in AMD's flagship ideathon &mdash; "Human Imagination Built with AI" &mdash; exploring cutting-edge AI-driven solutions and pushing creative boundaries with technology.</p>
+      <p class="proj-desc">Participated in AMD's flagship ideathon — "Human Imagination Built with AI" — exploring cutting-edge AI-driven solutions and pushing creative boundaries with technology.</p>
       <div class="tags"><span class="tag">AI</span><span class="tag">Ideathon</span><span class="tag">Innovation</span></div>
       <a href="https://github.com/varsharanir07" target="_blank" class="proj-link">&#8853; GitHub &rarr;</a>
     </div>
-
     <div class="proj-card">
       <div class="proj-num">02</div>
       <div class="proj-title">REC Hackathon</div>
@@ -242,7 +213,6 @@ footer .accent{color:var(--accent)}
       <div class="tags"><span class="tag">Hackathon</span><span class="tag">Python</span><span class="tag">Teamwork</span></div>
       <a href="https://github.com/varsharanir07" target="_blank" class="proj-link">&#8853; GitHub &rarr;</a>
     </div>
-
     <div class="proj-card">
       <div class="proj-num">03</div>
       <div class="proj-title">Coding Projects</div>
@@ -250,7 +220,6 @@ footer .accent{color:var(--accent)}
       <div class="tags"><span class="tag">Python</span><span class="tag">C</span><span class="tag">Java</span><span class="tag">C++</span></div>
       <a href="https://github.com/varsharanir07" target="_blank" class="proj-link">&#8853; GitHub &rarr;</a>
     </div>
-
     <div class="proj-card">
       <div class="proj-num">04</div>
       <div class="proj-title">Capture The Flag</div>
@@ -258,7 +227,6 @@ footer .accent{color:var(--accent)}
       <div class="tags"><span class="tag">Cybersecurity</span><span class="tag">CTF</span><span class="tag">Problem Solving</span></div>
       <a href="https://github.com/varsharanir07" target="_blank" class="proj-link">&#8853; GitHub &rarr;</a>
     </div>
-
     <div class="proj-card">
       <div class="proj-num">05</div>
       <div class="proj-title">Geo Hack 1.0</div>
@@ -266,17 +234,15 @@ footer .accent{color:var(--accent)}
       <div class="tags"><span class="tag">Hackathon</span><span class="tag">GeoData</span><span class="tag">Innovation</span></div>
       <a href="https://github.com/varsharanir07" target="_blank" class="proj-link">&#8853; GitHub &rarr;</a>
     </div>
-
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="sec-label">// 04 &mdash; Contact</div>
-  <h2 class="sec-title">Let&apos;s Build<br>Something</h2>
+  <h2 class="sec-title">Let's Build<br>Something</h2>
   <div class="contact-grid">
     <div>
-      <p class="contact-desc">I&apos;m open to collaborations, hackathon teams, and exciting opportunities. If you want to build something meaningful together &mdash; I&apos;m all ears!</p>
+      <p class="contact-desc">I'm open to collaborations, hackathon teams, and exciting opportunities. If you want to build something meaningful together — I'm all ears!</p>
       <div class="contact-links">
         <a href="mailto:varsharani.r.07@gmail.com" class="clink"><span class="clink-icon">&#9993;</span> varsharani.r.07@gmail.com</a>
         <a href="https://github.com/varsharanir07" target="_blank" class="clink"><span class="clink-icon">&#9451;</span> github.com/varsharanir07</a>
@@ -294,7 +260,6 @@ footer .accent{color:var(--accent)}
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <span>&copy; 2026 <span class="accent">Varsha Rani R</span>. Crafted with precision.</span>
   <span>Built with HTML &middot; CSS &middot; JS</span>
