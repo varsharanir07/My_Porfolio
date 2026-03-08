@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Varsha Rani R — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#080b10;--bg2:#0d1117;--surface:#111620;--border:#1e2530;--accent:#00e5ff;--accent2:#7b61ff;--text:#e8edf5;--muted:#5a6580}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;font-size:14px;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(8,11,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--accent)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--accent)}
+
+/* HERO */
+#hero{min-height:92vh;display:flex;align-items:center;padding:0 4rem;background:var(--bg);position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.03) 1px,transparent 1px);background-size:60px 60px}
+.hero-glow{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(0,229,255,0.05) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:800px}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(0,229,255,0.07);border:1px solid rgba(0,229,255,0.2);color:var(--accent);padding:0.3rem 0.9rem;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1.5rem}
+.hero-name{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(3rem,9vw,6rem);line-height:1;letter-spacing:-0.02em;color:var(--text)}
+.hero-name span{color:var(--accent)}
+.hero-role{font-family:'Syne',sans-serif;font-weight:600;font-size:clamp(1rem,2.5vw,1.4rem);color:var(--muted);margin-top:0.8rem}
+.hero-desc{max-width:520px;color:var(--muted);margin-top:1.5rem;font-size:0.85rem;line-height:1.9}
+.hero-btns{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;background:var(--accent);color:var(--bg);padding:0.75rem 1.8rem;font-family:'JetBrains Mono',monospace;font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-decoration:none;text-transform:uppercase;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:transform 0.2s,box-shadow 0.2s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,229,255,0.25)}
+.btn-ghost{display:inline-flex;align-items:center;border:1px solid var(--border);color:var(--muted);padding:0.75rem 1.8rem;font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.08em;text-decoration:none;text-transform:uppercase;transition:all 0.2s}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+/* SECTIONS */
+section{padding:6rem 4rem}
+.sec-label{color:var(--accent);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.75rem}
+.sec-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.02em;margin-bottom:3rem}
+
+/* ABOUT */
+#about{background:var(--bg2);border-top:1px solid var(--border)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.about-text p{color:var(--muted);font-size:0.875rem;line-height:1.9;margin-bottom:1.1rem}
+.about-text strong{color:var(--text)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.stat{background:var(--surface);border:1px solid var(--border);padding:1.2rem;transition:border-color 0.2s}
+.stat:hover{border-color:var(--accent)}
+.stat-num{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;color:var(--accent)}
+.stat-lbl{color:var(--muted);font-size:0.68rem;letter-spacing:0.08em;margin-top:0.2rem}
+.terminal{background:var(--surface);border:1px solid var(--border)}
+.term-head{background:var(--border);padding:0.6rem 1rem;display:flex;gap:0.5rem;align-items:center}
+.dot{width:10px;height:10px;border-radius:50%}
+.term-body{padding:1.2rem;font-size:0.82rem;line-height:2.1}
+.t-row{display:flex;gap:0.5rem}
+.t-out{padding-left:1rem;color:var(--muted)}
+.t-key{color:var(--accent)}
+.t-prompt{color:var(--accent2)}
+.t-cmd{color:var(--text)}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.cursor-blink{animation:blink 1s step-end infinite;color:var(--accent)}
+
+/* SKILLS */
+#skills{background:var(--bg)}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.skill-card{background:var(--surface);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s,transform 0.2s}
+.skill-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.skill-card-title{color:var(--accent);font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border)}
+.skill-row{display:flex;align-items:center;margin-bottom:1rem}
+.skill-name{color:var(--muted);font-size:0.78rem;width:130px;flex-shrink:0}
+.skill-bar{flex:1;height:2px;background:var(--border);margin:0 0.75rem;position:relative;overflow:hidden}
+.skill-fill{position:absolute;top:0;left:0;height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent))}
+.skill-pct{color:var(--muted);font-size:0.68rem;width:30px;text-align:right}
+@keyframes grow{from{width:0}to{width:var(--w)}}
+
+/* PROJECTS */
+#projects{background:var(--bg2);border-top:1px solid var(--border)}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.proj-card{background:var(--surface);border:1px solid var(--border);padding:2rem;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:border-color 0.25s,transform 0.25s}
+.proj-card:hover{border-color:rgba(0,229,255,0.35);transform:translateY(-5px)}
+.proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent2),var(--accent));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.proj-card:hover::before{transform:scaleX(1)}
+.proj-num{font-family:'Syne',sans-serif;font-weight:800;font-size:2.2rem;color:var(--border);line-height:1;margin-bottom:1rem}
+.proj-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:0.75rem}
+.proj-desc{color:var(--muted);font-size:0.78rem;line-height:1.8;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1.2rem}
+.tag{background:rgba(0,229,255,0.06);border:1px solid rgba(0,229,255,0.15);color:var(--accent);padding:0.18rem 0.55rem;font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase}
+.proj-link{color:var(--muted);font-size:0.7rem;text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;margin-top:1.2rem;display:inline-block;transition:color 0.2s}
+.proj-link:hover{color:var(--accent)}
+
+/* CONTACT */
+#contact{background:var(--bg)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+.contact-desc{color:var(--muted);font-size:0.875rem;line-height:1.9;margin-bottom:2rem}
+.contact-links{display:flex;flex-direction:column;gap:0.75rem}
+.clink{display:flex;align-items:center;gap:1rem;color:var(--muted);text-decoration:none;font-size:0.8rem;padding:0.9rem 1.1rem;border:1px solid var(--border);transition:all 0.2s}
+.clink:hover{border-color:var(--accent);color:var(--accent);transform:translateX(6px)}
+.clink-icon{color:var(--accent);width:18px}
+.form{display:flex;flex-direction:column;gap:1rem}
+.flabel{color:var(--muted);font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.35rem}
+.finput,.ftextarea{width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:0.8rem 1rem;font-family:'JetBrains Mono',monospace;font-size:0.8rem;outline:none;transition:border-color 0.2s}
+.finput:focus,.ftextarea:focus{border-color:var(--accent)}
+.ftextarea{min-height:120px;resize:none}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center}
+footer span{color:var(--muted);font-size:0.72rem}
+footer .accent{color:var(--accent)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav,section,#hero,footer{padding-left:1.5rem;padding-right:1.5rem}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .skills-grid,.projects-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:0.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">&lt;VarshaRani /&gt;</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-badge">&#9670; Available for work</div>
+    <h1 class="hero-name">Varsha<br><span>Rani R</span></h1>
+    <p class="hero-role">Software Developer &amp; Problem Solver</p>
+    <p class="hero-desc">Active learner, hackathon enthusiast, and state-level elocution champion from Chennai, Tamil Nadu. I build with purpose and speak with impact.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View Projects &#8594;</a>
+      <a href="#contact" class="btn-ghost">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec-label">// 01 &mdash; About</div>
+  <h2 class="sec-title">Who I Am</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Hey &mdash; I&apos;m <strong>Varsha Rani R</strong>, a software developer and active learner from Chennai, Tamil Nadu. I&apos;m passionate about building with technology and thrive in competitive environments like hackathons and ideathons.</p>
+      <p>I participated in <strong>AMD Slingshot</strong> (Human Imagination Built with AI) and regularly take part in hackathons across colleges &mdash; including one at <strong>Rajalakshmi Engineering College</strong>. Currently levelling up in Java &amp; C++.</p>
+      <p>Beyond code, I&apos;m a <strong>state-level elocution prize winner</strong>, former school House Captain, and a sports enthusiast &mdash; Badminton, Kho-Kho, and Throwball. I believe great software is built by people who never stop learning.</p>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">9.5</div><div class="stat-lbl">College CGPA (Sem 1)</div></div>
+        <div class="stat"><div class="stat-num">95%</div><div class="stat-lbl">Class 10 Boards</div></div>
+        <div class="stat"><div class="stat-num">91%</div><div class="stat-lbl">Class 12 Boards</div></div>
+        <div class="stat"><div class="stat-num">&#127942;</div><div class="stat-lbl">State Elocution Winner</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="terminal">
+        <div class="term-head">
+          <div class="dot" style="background:#ff5f57"></div>
+          <div class="dot" style="background:#febc2e"></div>
+          <div class="dot" style="background:#28c840"></div>
+        </div>
+        <div class="term-body">
+          <div class="t-row"><span class="t-prompt">~$</span><span class="t-cmd">whoami</span></div>
+          <div class="t-out"><span class="t-key">name</span>: "Varsha Rani R"</div>
+          <div class="t-out"><span class="t-key">role</span>: "Software Developer"</div>
+          <div class="t-out"><span class="t-key">location</span>: "Chennai, Tamil Nadu"</div>
+          <br>
+          <div class="t-row"><span class="t-prompt">~$</span><span class="t-cmd">cat interests.txt</span></div>
+          <div class="t-out"><span class="t-key">[</span> "Hackathons", "Public Speaking",</div>
+          <div class="t-out">&nbsp;&nbsp;"Badminton", "AI &amp; Innovation" <span class="t-key">]</span></div>
+          <br>
+          <div class="t-row"><span class="t-prompt">~$</span><span class="t-cmd">git status</span></div>
+          <div class="t-out" style="color:#28c840">&#10004; Open to new opportunities</div>
+          <br>
+          <div class="t-row"><span class="t-prompt">~$</span><span class="cursor-blink">&#9608;</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-label">// 02 &mdash; Skills</div>
+  <h2 class="sec-title">Technical Stack</h2>
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <div class="skill-card-title">Languages</div>
+      <div class="skill-row"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" style="width:85%;--w:85%"></div></div><span class="skill-pct">85%</span></div>
+      <div class="skill-row"><span class="skill-name">C Language</span><div class="skill-bar"><div class="skill-fill" style="width:80%;--w:80%"></div></div><span class="skill-pct">80%</span></div>
+      <div class="skill-row"><span class="skill-name">Java (Learning)</span><div class="skill-bar"><div class="skill-fill" style="width:40%;--w:40%"></div></div><span class="skill-pct">40%</span></div>
+      <div class="skill-row"><span class="skill-name">C++ (Learning)</span><div class="skill-bar"><div class="skill-fill" style="width:35%;--w:35%"></div></div><span class="skill-pct">35%</span></div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-title">Soft Skills</div>
+      <div class="skill-row"><span class="skill-name">Public Speaking</span><div class="skill-bar"><div class="skill-fill" style="width:95%;--w:95%"></div></div><span class="skill-pct">95%</span></div>
+      <div class="skill-row"><span class="skill-name">Active Listening</span><div class="skill-bar"><div class="skill-fill" style="width:92%;--w:92%"></div></div><span class="skill-pct">92%</span></div>
+      <div class="skill-row"><span class="skill-name">Leadership</span><div class="skill-bar"><div class="skill-fill" style="width:88%;--w:88%"></div></div><span class="skill-pct">88%</span></div>
+      <div class="skill-row"><span class="skill-name">Team Work</span><div class="skill-bar"><div class="skill-fill" style="width:90%;--w:90%"></div></div><span class="skill-pct">90%</span></div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-title">Interests</div>
+      <div class="skill-row"><span class="skill-name">Hackathons &#128293;</span><div class="skill-bar"><div class="skill-fill" style="width:90%;--w:90%"></div></div><span class="skill-pct">90%</span></div>
+      <div class="skill-row"><span class="skill-name">AI &amp; Ideathons &#129302;</span><div class="skill-bar"><div class="skill-fill" style="width:85%;--w:85%"></div></div><span class="skill-pct">85%</span></div>
+      <div class="skill-row"><span class="skill-name">Badminton &#127992;</span><div class="skill-bar"><div class="skill-fill" style="width:88%;--w:88%"></div></div><span class="skill-pct">88%</span></div>
+      <div class="skill-row"><span class="skill-name">Elocution &#127942;</span><div class="skill-bar"><div class="skill-fill" style="width:95%;--w:95%"></div></div><span class="skill-pct">95%</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-label">// 03 &mdash; Projects</div>
+  <h2 class="sec-title">Selected Work</h2>
+  <div class="projects-grid">
+
+    <div class="proj-card">
+      <div class="proj-num">01</div>
+      <div class="proj-title">AMD Slingshot Ideathon</div>
+      <p class="proj-desc">Participated in AMD's flagship ideathon &mdash; "Human Imagination Built with AI" &mdash; exploring cutting-edge AI-driven solutions and pushing creative boundaries with technology.</p>
+      <div class="tags"><span class="tag">AI</span><span class="tag">Ideathon</span><span class="tag">Innovation</span></div>
+      <a href="https://github.com/varsharanir07" target="_blank" class="proj-link">&#8853; GitHub &rarr;</a>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-num">02</div>
+      <div class="proj-title">REC Hackathon</div>
+      <p class="proj-desc">Competed in the inter-college hackathon at Rajalakshmi Engineering College, collaborating under pressure to design and build solutions within tight deadlines.</p>
+      <div class="tags"><span class="tag">Hackathon</span><span class="tag">Python</span><span class="tag">Teamwork</span></div>
+      <a href="https://github.com/varsharanir07" target="_blank" class="proj-link">&#8853; GitHub &rarr;</a>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-num">03</div>
+      <div class="proj-title">Coding Projects</div>
+      <p class="proj-desc">Building projects in Python and C to sharpen problem-solving skills, while actively learning Java and C++ to broaden my technical toolkit.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">C</span><span class="tag">Java</span><span class="tag">C++</span></div>
+      <a href="https://github.com/varsharanir07" target="_blank" class="proj-link">&#8853; GitHub &rarr;</a>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-num">04</div>
+      <div class="proj-title">Capture The Flag</div>
+      <p class="proj-desc">Competed in a campus CTF event, solving cybersecurity challenges involving cryptography, reverse engineering, and logical problem-solving under time pressure.</p>
+      <div class="tags"><span class="tag">Cybersecurity</span><span class="tag">CTF</span><span class="tag">Problem Solving</span></div>
+      <a href="https://github.com/varsharanir07" target="_blank" class="proj-link">&#8853; GitHub &rarr;</a>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-num">05</div>
+      <div class="proj-title">Geo Hack 1.0</div>
+      <p class="proj-desc">Participated in Geo Hack 1.0, a college campus hackathon blending geography, data, and creative tech solutions to tackle real-world location-based challenges.</p>
+      <div class="tags"><span class="tag">Hackathon</span><span class="tag">GeoData</span><span class="tag">Innovation</span></div>
+      <a href="https://github.com/varsharanir07" target="_blank" class="proj-link">&#8853; GitHub &rarr;</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-label">// 04 &mdash; Contact</div>
+  <h2 class="sec-title">Let&apos;s Build<br>Something</h2>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-desc">I&apos;m open to collaborations, hackathon teams, and exciting opportunities. If you want to build something meaningful together &mdash; I&apos;m all ears!</p>
+      <div class="contact-links">
+        <a href="mailto:varsharani.r.07@gmail.com" class="clink"><span class="clink-icon">&#9993;</span> varsharani.r.07@gmail.com</a>
+        <a href="https://github.com/varsharanir07" target="_blank" class="clink"><span class="clink-icon">&#9451;</span> github.com/varsharanir07</a>
+        <a href="https://www.linkedin.com/in/varsha-rani-r-068a9937a/" target="_blank" class="clink"><span class="clink-icon">in</span> linkedin.com/in/varsha-rani-r</a>
+      </div>
+    </div>
+    <div>
+      <div class="form">
+        <div><div class="flabel">Your Name</div><input type="text" class="finput" placeholder="Jane Doe"/></div>
+        <div><div class="flabel">Email</div><input type="email" class="finput" placeholder="jane@example.com"/></div>
+        <div><div class="flabel">Message</div><textarea class="ftextarea" placeholder="Tell me about your project..."></textarea></div>
+        <button class="btn-primary" style="align-self:flex-start;border:none;cursor:pointer">Send Message &rarr;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>&copy; 2026 <span class="accent">Varsha Rani R</span>. Crafted with precision.</span>
+  <span>Built with HTML &middot; CSS &middot; JS</span>
+</footer>
+
+</body>
+</html>
